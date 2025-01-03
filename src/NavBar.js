@@ -1,26 +1,52 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
-  const handleLogoClick = () => alert('Ripit logo clicked!');
-  const handleMenuItemClick = (menuItem) => alert(`You clicked ${menuItem}!`);
-
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ backgroundColor: '#3a7ca5' }}>
       <Toolbar>
         <Box
           component="img"
-          src="/ripit_logo.png"
+          src="/ripit_logo.svg"
           alt="Ripit Logo"
           sx={{ width: 40, height: 40, cursor: 'pointer', marginRight: 2 }}
-          onClick={handleLogoClick}
         />
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Ripit
         </Typography>
-        <Button color="inherit" onClick={() => handleMenuItemClick('Home')}>Home</Button>
-        <Button color="inherit" onClick={() => handleMenuItemClick('About')}>About</Button>
-        <Button color="inherit" onClick={() => handleMenuItemClick('Contact')}>Contact</Button>
+        <Button
+          component={Link}
+          to="/"
+          color="inherit"
+          sx={{ '&:hover': { backgroundColor: '#2d5e87', color: '#fff' } }}
+        >
+          Home
+        </Button>
+        <Button
+          component={Link}
+          to="/about"
+          color="inherit"
+          sx={{ '&:hover': { backgroundColor: '#2d5e87', color: '#fff' } }}
+        >
+          About
+        </Button>
+        <Button
+          component={Link}
+          to="/contact"
+          color="inherit"
+          sx={{ '&:hover': { backgroundColor: '#2d5e87', color: '#fff' } }}
+        >
+          Contact
+        </Button>
+        <Button
+          component={Link}
+          to="/auth"
+          color="inherit"
+          sx={{ '&:hover': { backgroundColor: '#2d5e87', color: '#fff' } }}
+        >
+          Login / Sign Up
+        </Button>
       </Toolbar>
     </AppBar>
   );
