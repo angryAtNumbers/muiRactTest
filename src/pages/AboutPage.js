@@ -3,11 +3,9 @@ import { Container, Typography } from '@mui/material';
 
 const AboutPage = () => (
   <Container sx={{ mt: 4 }}>
-    <Typography variant="h3" gutterBottom>
-      About Ripit
-    </Typography>
+    <Typography variant="h3" gutterBottom>About Pipit</Typography>
     <Typography variant="body1">
-      Ripit is a sample app showcasing the power of Material UI and React.
+      Pipit is a modern website showcasing the capabilities of Material-UI. Our mission is to provide clean and functional designs.
     </Typography>
   </Container>
 );
