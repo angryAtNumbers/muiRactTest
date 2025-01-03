@@ -4,42 +4,23 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#3a7ca5' }}>
+    <AppBar position="static" sx={{ backgroundColor: '#000000' }}>
       <Toolbar>
-        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+        <Box
+          component="img"
+          src="/logo.png"
+          alt="Logo"
+          sx={{ width: 40, height: 40, marginRight: 2 }}
+        />
+        <Typography variant="h6" sx={{ flexGrow: 1, color: '#ffffff' }}>
           Ripit
         </Typography>
         <Button
           component={Link}
           to="/"
-          color="inherit"
-          sx={{ '&:hover': { backgroundColor: '#2d5e87', color: '#fff' } }}
+          sx={{ color: '#ffffff', '&:hover': { backgroundColor: '#ffffff', color: '#000000' } }}
         >
           Home
-        </Button>
-        <Button
-          component={Link}
-          to="/about"
-          color="inherit"
-          sx={{ '&:hover': { backgroundColor: '#2d5e87', color: '#fff' } }}
-        >
-          About
-        </Button>
-        <Button
-          component={Link}
-          to="/contact"
-          color="inherit"
-          sx={{ '&:hover': { backgroundColor: '#2d5e87', color: '#fff' } }}
-        >
-          Contact
-        </Button>
-        <Button
-          component={Link}
-          to="/auth"
-          color="inherit"
-          sx={{ '&:hover': { backgroundColor: '#2d5e87', color: '#fff' } }}
-        >
-          Login / Sign Up
         </Button>
       </Toolbar>
     </AppBar>

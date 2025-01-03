@@ -1,21 +1,20 @@
 import React from 'react';
-import { Amplify } from 'aws-amplify';
-import awsExports from './aws-exports';
-import { Authenticator } from '@aws-amplify/ui-react';
-import '@aws-amplify/ui-react/styles.css';
-
-Amplify.configure(awsExports);
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './theme';
+import NavBar from './NavBar';
+import HomePage from './pages/HomePage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <Authenticator>
-      {({ signOut, user }) => (
-        <div style={{ textAlign: 'center', marginTop: '50px' }}>
-          <h1>Welcome, {user.username}!</h1>
-          <button onClick={signOut}>Sign Out</button>
-        </div>
-      )}
-    </Authenticator>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
