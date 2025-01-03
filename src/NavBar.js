@@ -6,12 +6,6 @@ const NavBar = () => {
   return (
     <AppBar position="static" sx={{ backgroundColor: '#3a7ca5' }}>
       <Toolbar>
-        <Box
-          component="img"
-          src="/ripit_logo.svg"
-          alt="Ripit Logo"
-          sx={{ width: 40, height: 40, cursor: 'pointer', marginRight: 2 }}
-        />
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Ripit
         </Typography>
